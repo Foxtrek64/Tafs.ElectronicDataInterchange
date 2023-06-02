@@ -1,47 +1,34 @@
-[![Project Icon](./Assets/logo.png)](https://ediweave.net/)
+# Tafs.ElectronicDataInterchange
 
-[![Nuget Package](https://img.shields.io/nuget/v/EdiWeave.Framework.svg?maxAge=86400&style=flat-square)](https://www.nuget.org/packages/EdiWeave.Framework/) 
-[![Build status](https://img.shields.io/appveyor/ci/Silvenga/ediweave.svg?maxAge=86400&style=flat-square)](https://ci.appveyor.com/project/Silvenga/ediweave)
+Tafs.EDI is an open source, [Remora-powered](https://github.com/Remora/Remora.Sdk), [LGPL-licensed](./LICENSE) framework for serializing and deserializing EDI X12, X12 HIPAA, and EDIFACT documents.
 
-> An **open source** framework that empowers developers and businesses interested in enabling their software systems with EDI capabilities and can be integrated into your business applications.
-> \- Originally from EdiFrabric
-
-EdiWeave is a hard-fork of the now closed-source library EdiFabric. It mirror'ed the last state of the EdiFabric repository before the company EdiFabric took it down.
+This project was originally inspired by [EdiWeave](https://ediweave.net/) but is designed to be a ground-up reinvisioning of the project with full documentation.
 
 Supported frameworks:
-- .NET Framework 4.5
-- .NET Standard 1.6
-- .NET Standard 2.0
-- .NET Core 1.1
+- netstandard2.1
+- net6.0
+- net7.0
 
-## Download it!
+## Libraries
 
-### 8.0 Branch (Current)
-```
-Install-Package EdiWeave.Framework
-```
+### Tafs.EDI.Core
 
-### 7.3 Branch (Legacy)
-```
-Install-Package EdiWeave.Framework -Version 7.3.3
-```
-
-## Migrating from EdiFabric
-
-In most cases, upgrading from EdiFabric to EdiWeave is easy! This project attempts to maintain API compatibility with EdiFabric when possible (at least for the known future). Existing class based definitions (and XML based ones, if using the Legacy branch) should be fully compatible.
-
-First uninstall EdiFabric:
+This library provides base types for implementing non-version-specific libraries. Some version control is still provided, however we endeavor to clearly mark when a particular element is and is no longer available.
 
 ```
-Uninstall-Package EdiFabric.Framework
+Install-Package Tafs.EDI.Core
 ```
 
-Then install EdiWeave:
+### Tafs.EDI.TransactionSets
 
-```
-Install-Package EdiWeave.Framework
-```
+This is a meta library which automatically installs all transaction sets. Current transaction sets include:
 
-Then simply find and replace the strings `EdiFabric` with `EdiWeave`.
 
-**Note**: If you are using the latest version of the existing class-based definitions, please find and remove the `Id` property as well as the attributes adorning it. Failure to do so will cause parsing errors.
+|             Industry              |   Supported Transaction Sets    |               Package Name                |
+|-----------------------------------|---------------------------------|-------------------------------------------|
+| X12C - Communication and Controls | Nothing here yet!               |                                           |
+| X12F - Finanace                   | Nothing here yet!               |                                           |
+| X12I - Transportation             | 204 (Motor Carrier Load Tender) | `Tafs.EDI.TransactionSets.Transportation` |
+| X12M - Supply Chain               | Nothing here yet!               |                                           |
+| X12N - Insurance                  | Nothing here yet!               |                                           |
+

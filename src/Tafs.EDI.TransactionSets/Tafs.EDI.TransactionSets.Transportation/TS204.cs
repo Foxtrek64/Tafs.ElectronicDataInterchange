@@ -27,7 +27,7 @@ using Tafs.EDI.Core.Models.EDI.X12.Segments;
 
 namespace Tafs.EDI.TransactionSets.Transportation
 {
-    [TransactionSet(Core.EdiFormat.X12, 8010, 204)]
+    [TransactionSet(Core.EdiFormat.X12, 8030, 204)]
     public sealed record class TS204
     (
         [property: Position(0100)] ST TransactionSetHeader,
