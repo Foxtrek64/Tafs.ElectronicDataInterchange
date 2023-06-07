@@ -27,7 +27,7 @@ This is a meta library which automatically installs all transaction sets. Curren
 |             Industry              |   Supported Transaction Sets    |               Package Name                |
 |-----------------------------------|---------------------------------|-------------------------------------------|
 | X12C - Communication and Controls | Nothing here yet!               |                                           |
-| X12F - Finanace                   | Nothing here yet!               |                                           |
+| X12F - Finance                    | Nothing here yet!               |                                           |
 | X12I - Transportation             | 204 (Motor Carrier Load Tender) | `Tafs.EDI.TransactionSets.Transportation` |
 | X12M - Supply Chain               | Nothing here yet!               |                                           |
 | X12N - Insurance                  | Nothing here yet!               |                                           |
